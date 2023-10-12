@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulário 2 - crudcrud.com</h1>
+    <form>
+        <ul>
+            <li>
+                <label for="firstname">Nome:</label>
+                <input type="text" id="firstname" name="firstname"/>
+            </li>
+            <li>
+                <label for="lastname">Sobrenome:</label>
+                <input type="text" id="lastname" name="lastname"
+                oninvalid="alert('Sobrenome deve conter 3 ou mais caracteres');" pattern=".{3,}"/>
+            </li>
+            <li>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"/>
+            </li>
+            <li>
+                <input type="submit" onclick="postJSON()">
+            </li>
+        </ul>
+    </form>
+    <script>
+        async function postJSON() {
+            const formData = new FormData(document.querySelector('form'))
+            const firstname = formData.get("firstname")
+            const lastname = document.getElementById("lastname").value;
+            const email = formData.get("email")
+            try {
+                const response = fetch("https://crudcrud.com/api/338a10b3dec84cf0ad59d863c95b3b19/aula3", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        firstname: firstname,
+                        lastname: lastname,
+                        email: email
+                    }),
+                }).then(result => {
+                    console.log('Success:', result);
+                });
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>

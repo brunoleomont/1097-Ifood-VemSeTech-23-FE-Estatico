@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+#cpf {
+    color: chocolate;
+    background-color: black;
+}
+
+.minhaclasse {
+    color: white;
+    background-color: black;
+}
+
+button:hover {
+    background-color: blueviolet;
+    color: white;
+}
