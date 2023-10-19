@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+}
+
+header,
+nav,
+main,
+section,
+article,
+footer {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+input:invalid {
+    background-color: red;
+}

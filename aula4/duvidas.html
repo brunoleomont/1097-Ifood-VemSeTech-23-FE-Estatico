@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="">
+
+        <label for="age">validar input number:</label>
+        <input type="number" id="age" min="1" max="100" step="1">
+
+    </form>
+
+    <label for="data">Valores obtidos do get:</label>
+    <textarea id="data" rows="20" cols="70"></textarea>
+
+
+</body>
+<script>
+    function getData() {
+        fetch("https://crudcrud.com/api/52f5d08ceda64b7d84c0b0f3aae78bc3/aula3", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(response => response.text())
+        .then(text => document.getElementById("data").value = text);
+    }
+
+    getData();
+</script>
+
+</html>
