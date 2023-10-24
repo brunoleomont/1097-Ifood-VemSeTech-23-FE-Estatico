@@ -1,0 +1,25 @@
+main {
+    width: 500px;
+    border: 1px solid black;
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    main {
+        width: 80px;
+        height: 80px;
+        background-color: purple;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: xx-large;
+    }
+}
+
+.btn-primary {
+    background-color: brown;
+}
+
+.btn-primary:hover {
+    background-color: crimson;
+}

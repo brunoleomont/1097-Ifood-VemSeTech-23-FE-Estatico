@@ -1,0 +1,14 @@
+main {
+    width: 500px;
+    border: 1px solid gray;
+    width: 80px;
+    height: 80px;
+    color: purple;
+    background-color: white;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: xx-large;
+    box-shadow: 0 0 5px 1px blueviolet;
+}
